@@ -20,9 +20,9 @@ You can start by cloning our repository and following the steps below.
     conda activate tart
     ```
 
-2. Download [pre-trained TART Reasoning module](https://github.com/HazyResearch/TART/releases/download/reasoning_module/tart_heads.zip) (you will need this if you want to run the sample notebooks in `src/notebooks`)
+2. Download [pre-trained TART Reasoning module](https://github.com/HazyResearch/TART/releases/download/initial_release/tart_heads.zip) (you will need this if you want to run the sample notebooks in `src/notebooks`)
     ```
-    wget https://github.com/HazyResearch/TART/releases/download/reasoning_module/tart_heads.zip
+    wget https://github.com/HazyResearch/TART/releases/download/initial_release/tart_heads.zip
     unzip tart_heads.zip
     ```
 
