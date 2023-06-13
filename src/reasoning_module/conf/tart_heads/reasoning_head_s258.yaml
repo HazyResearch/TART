@@ -1,0 +1,44 @@
+inherit: 
+    - ../base.yaml
+
+model:
+  family: gpt2
+  n_dims: 16
+  n_positions: 258
+
+training:
+    task: probabilistic_logistic_regression
+    batch_size: 128
+    per_device_batch_size: 32
+    learning_rate: 0.0001
+    save_every_steps: 1000
+    keep_every_steps: 6000
+    train_steps: 35001
+    weight_multiplier: 10
+    variable_noise: false
+    data: gaussian
+
+    curriculum:
+        dims:
+            start: 4
+            end: 16
+            inc: 4
+            interval: 1000
+        points:
+            start: 18 #260 #16
+            end: 258 #64
+            inc: 30
+            interval: 1000
+        probabilities:
+            start: 1
+            end: 1
+            inc: 1
+            interval: 20000
+
+out_dir: ./outputs
+
+wandb:
+    name: "test"
+    entity: ""
+    project: ""
+    log_every_steps: 100

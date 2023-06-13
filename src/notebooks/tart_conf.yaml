@@ -1,0 +1,8 @@
+n_dims: 16
+n_positions: 258
+n_embd: 256
+n_head: 8
+n_layer: 12
+n_y: 1
+    
+  
