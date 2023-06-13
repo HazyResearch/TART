@@ -1,0 +1,45 @@
+inherit: 
+    - base.yaml
+
+model:
+  family: gpt-neo
+  n_dims: 16
+  n_positions: 64
+  model_name:  "EleutherAI/gpt-neo-125m" 
+  lr_solver_head: True
+
+training:
+    task: nladap
+    batch_size: 64
+    per_device_batch_size: 64
+    learning_rate: 0.0001
+    save_every_steps: 500
+    keep_every_steps: 1000
+    train_steps: 30001
+    weight_multiplier: 10
+    data: nl
+
+    curriculum:
+        dims:
+            start: 16 #4 #12 #4 #12 #4
+            end: 16
+            inc: 4
+            interval: 100
+        points:
+            start: 64 #64 #16 #64 #16
+            end: 64
+            inc: 12
+            interval: 100
+        probabilities:
+            start: 1 
+            end: 1 
+            inc: 1
+            interval: 20000
+
+out_dir: /u/tart_heads
+
+wandb:
+    name: "lr_tuned_nlsynth_bs64_d16_p64"
+    entity: ""
+    project: ""
+    log_every_steps: 200
