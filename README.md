@@ -2,7 +2,7 @@
 
 TART is a package for training and deploying task-agnostic reasoning modules which can be composed with arbitrary foundation models to improve in-context learning peformance for classification tasks. TART is task, model and domain agnostic.
 
-We introduce TART in our paper, TART: A plug-and-play Transformer module for task-agnostic reasoning. 
+We introduce TART in our paper, [TART: A plug-and-play Transformer module for task-agnostic reasoning](https://arxiv.org/abs/2306.07536). 
 
 <div align="center">
     <img src="assets/tart_overview.png" alt="TART Diagram"/>
